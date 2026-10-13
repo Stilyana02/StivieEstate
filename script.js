@@ -1,0 +1,10 @@
+const pages=["brochure/page-1.jpg","brochure/page-2.jpg","brochure/page-3.jpg","brochure/page-4.jpg"];let current=0;let busy=false;
+const front=document.getElementById("frontPage"),back=document.getElementById("backPage"),counter=document.getElementById("pageCounter"),book=document.getElementById("flipbook");
+function show(i){front.style.backgroundImage=`url("${pages[i]}")`;counter.textContent=`${i+1} / ${pages.length}`;back.style.backgroundImage=i<pages.length-1?`url("${pages[i+1]}")`:`url("${pages[i]}")`;}
+function next(){if(busy||current>=pages.length-1)return;busy=true;front.classList.remove("reverse");front.classList.add("turning");setTimeout(()=>{current++;show(current);front.classList.remove("turning");busy=false},650)}
+function prev(){if(busy||current<=0)return;busy=true;front.classList.remove("turning");front.classList.add("reverse");setTimeout(()=>{current--;show(current);front.classList.remove("reverse");busy=false},650)}
+document.querySelector(".next").onclick=next;document.querySelector(".prev").onclick=prev;document.getElementById("nextBtn").onclick=next;document.getElementById("prevBtn").onclick=prev;
+let startX=null;book.addEventListener("touchstart",e=>startX=e.touches[0].clientX,{passive:true});book.addEventListener("touchend",e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45){dx<0?next():prev()}startX=null});
+book.addEventListener("click",e=>{const r=book.getBoundingClientRect();e.clientX-r.left<r.width/2?prev():next()});
+const menu=document.querySelector(".menu-btn"),nav=document.querySelector(".nav nav");menu.addEventListener("click",()=>{nav.style.display=nav.style.display==="flex"?"none":"flex";nav.style.position="absolute";nav.style.top="78px";nav.style.left="0";nav.style.right="0";nav.style.background="#fff";nav.style.padding="20px";nav.style.flexDirection="column";nav.style.gap="18px"});
+show(0);

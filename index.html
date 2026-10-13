@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Супермаркет Стиви – актуални седмични предложения, брошура и информация за магазина във Велико Търново.">
+<title>Супермаркет Стиви | Качество и вкус всеки ден!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <img src="stivi-logo.png" alt="СТИВИ">
+    </a>
+    <nav>
+      <a href="#home">Начало</a>
+      <a href="#about">За нас</a>
+      <a href="#offers">Оферти</a>
+      <a href="#brochure">Брошура</a>
+      <a href="#wine">Stivi Estate</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <div class="nav-phone">☎ <a href="tel:+359896711697">0896 711 697</a></div>
+    <button class="menu-btn" aria-label="Меню">☰</button>
+  </div>
+</header>
+
+<div class="estate-float">
+  <a href="https://stiviestate.com/" target="_blank" rel="noopener">🍷 Stivi Estate <span>↗</span></a>
+</div>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-copy">
+      <div class="hero-subtitle">ПРЕСНИ ПРОДУКТИ · ДОБРИ ЦЕНИ</div>
+      <h1>Качество и вкус<br><em>всеки ден!</em></h1>
+      <p>Пресни продукти, добри предложения и всичко необходимо за вашата трапеза – на едно място.</p>
+      <div class="actions">
+        <a class="btn primary" href="#offers">Виж предложенията</a>
+        <a class="btn outline" href="#brochure">Разгледай брошурата ↓</a>
+      </div>
+    </div>
+    
+  </div>
+  <a class="scroll-down" href="#offers" aria-label="Към предложенията">↓</a>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="offers-section">
+  <div class="container">
+    <div class="section-head light-head">
+      <div>
+        <span class="eyebrow">АКТУАЛНО</span>
+        <h2>Тази седмица в Стиви</h2>
+        <p>Подбрани предложения от актуалната ни брошура.</p>
+      </div>
+      <a class="brochure-jump" href="#brochure">Разгледай цялата брошура ↓</a>
+    </div>
+
+    <div class="offer-grid">
+      <article class="offer-card">
+        <img src="offer-meat.jpg" alt="Предложение от брошурата">
+        <div class="offer-card-body"><span>АКТУАЛНА ОФЕРТА</span><h3>Подбрани месни продукти</h3><p>Виж цената и условията в брошурата.</p></div>
+      </article>
+      <article class="offer-card">
+        <img src="offer-chicken.jpg" alt="Предложение от брошурата">
+        <div class="offer-card-body"><span>АКТУАЛНА ОФЕРТА</span><h3>Пресни предложения</h3><p>Открий всички предложения за седмицата.</p></div>
+      </article>
+      <article class="offer-card">
+        <img src="offer-dairy.jpg" alt="Предложение от брошурата">
+        <div class="offer-card-body"><span>АКТУАЛНА ОФЕРТА</span><h3>Любими продукти</h3><p>Добри цени и богат избор в Стиви.</p></div>
+      </article>
+      <article class="offer-card">
+        <img src="offer-sweets.jpg" alt="Предложение от брошурата">
+        <div class="offer-card-body"><span>АКТУАЛНА ОФЕРТА</span><h3>Още предложения</h3><p>Разгледай всички страници на брошурата.</p></div>
+      </article>
+    </div>
+
+    <a class="big-brochure-button" href="#brochure">📖 Виж цялата брошура <span>↓</span></a>
+  </div>
+</section>
+
+<!-- BROCHURE -->
+<section id="brochure" class="section brochure">
+  <div class="container">
+    <div class="section-head brochure-head">
+      <div>
+        <span class="eyebrow">ДИГИТАЛНА БРОШУРА</span>
+        <h2>Новата брошура е тук!</h2>
+        <p>Виж какво сме ти подготвили тази седмица</p>
+      </div>
+    </div>
+
+    <div class="flipbook-wrap">
+      <button class="flip-arrow prev" aria-label="Предишна страница">‹</button>
+      <div class="flipbook" id="flipbook">
+        <div class="book-shadow"></div>
+        <div class="page-stack" id="pageStack">
+          <div class="page page-back" id="backPage"></div>
+          <div class="page page-front" id="frontPage"></div>
+        </div>
+      </div>
+      <button class="flip-arrow next" aria-label="Следваща страница">›</button>
+    </div>
+
+    <div class="book-controls">
+      <button id="prevBtn">← Предишна</button>
+      <span id="pageCounter">1 / 4</span>
+      <button id="nextBtn">Следваща →</button>
+    </div>
+    <div class="hint">На телефон плъзни наляво/надясно. На компютър използвай стрелките.</div>
+  </div>
+</section>
+
+<!-- WINE / STIVI ESTATE -->
+<section id="wine" class="wine-section">
+  <div class="wine-image"></div>
+  <div class="wine-overlay"></div>
+  <div class="container wine-inner">
+    <div class="wine-copy">
+      <span class="eyebrow">STIVI ESTATE</span>
+      <h2>От магазина<br><em>до добрата чаша.</em></h2>
+      <p>Открийте вината на Stivi Estate – бутиковата винарна .</p>
+      <a class="btn wine-btn" href="https://stiviestate.com/" target="_blank" rel="noopener">Разгледай вината →</a>
+    </div>
+    <div class="wine-note">
+      <span>Вино</span>
+      <strong>с характер.</strong>
+      <small>Stivi Estate</small>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <img src="storefront-thumb.jpg" alt="Супермаркет Стиви във Велико Търново">
+    </div>
+    <div>
+      <span class="eyebrow">ЗА СТИВИ</span>
+      <h2>Вашият супермаркет за всеки ден.</h2>
+      <p>Супермаркет Стиви предлага богат избор от хранителни продукти, актуални предложения и удобно пазаруване във Велико Търново.</p>
+      <div class="facts">
+        <div><strong>07:00–22:00</strong><span>Всеки ден</span></div>
+        <div><strong>Велико Търново</strong><span>ул. Професор Илия Янулов 1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow">ПОСЕТЕТЕ НИ</span>
+      <h2>Супермаркет Стиви</h2>
+      <p>📍 <strong>гр. Велико Търново, ул. Професор Илия Янулов 1</strong></p>
+      <p>🕒 <strong>07:00 – 22:00, всеки ден</strong></p>
+      <p>📞 <a class="phone" href="tel:+359896711697">0896 711 697</a></p>
+      <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Supermarket+Stivi,+Veliko+Tarnovo,+ul.+Professor+Iliya+Yanulov+1" target="_blank" rel="noopener">Отвори в Google Maps</a>
+    </div><div class="map">
+        <iframe
+            iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.2673202994524!2d25.607404000000002!3d43.077875000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a925e06dfa187d%3A0x9573f54e0968504f!2z0KHRgtC40LLQuA!5e0!3m2!1sbg!2sbg!4v1791558410928!5m2!1sbg!2sbg"
+            width="600"
+            height="450" 
+            style="border:0;"
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          
+            title="Местоположение на Супермаркет Стиви">
+        </iframe>
+    </div>
+   
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer">
+    <div class="logo"><img src="stivi-logo.png" alt="СТИВИ"></div>
+    <div class="footer-links"><a href="#home">Начало</a><a href="#offers">Оферти</a><a href="#brochure">Брошура</a><a href="#wine">Stivi Estate</a><a href="#contact">Контакти</a></div>
+    <div><a href="https://stiviestate.com/" target="_blank" rel="noopener">Stivi Estate ↗</a><p>© 2026 Супермаркет Стиви</p></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
