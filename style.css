@@ -365,3 +365,100 @@ img, iframe, video { max-width: 100%; }
     display: none;
   }
 }
+
+/* BROCHURE ZOOM */
+.flipbook {
+  cursor: zoom-in;
+}
+
+body.zoom-open {
+  overflow: hidden;
+}
+
+.brochure-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  background: rgba(8, 8, 8, 0.97);
+  color: white;
+}
+
+.brochure-zoom.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.zoom-toolbar {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #171717;
+  z-index: 2;
+}
+
+.zoom-counter {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.zoom-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zoom-buttons button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: #292929;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.zoom-buttons button:hover {
+  background: #a40000;
+}
+
+.zoom-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.zoom-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transform-origin: center center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+@media (max-width: 600px) {
+  .zoom-toolbar {
+    min-height: 58px;
+    padding: 8px 12px;
+  }
+
+  .zoom-buttons button {
+    width: 40px;
+    height: 40px;
+  }
+}
