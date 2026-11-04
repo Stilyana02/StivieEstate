@@ -559,14 +559,16 @@ body.zoom-open {
     align-items: center;
   }
 
-  /* Снимка */
-  .hero-bg {
-    inset: 0;
-    background-position: 78% center;
-    background-size: cover;
-    transform: none;
-    filter: none;
-  }
+  /* Мобилна фонова снимка */
+.hero-bg {
+  inset: 0;
+  background-image: url("storefront-mobile.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: none;
+  filter: none;
+}}
 
   /* По-естествен градиент */
   .hero-overlay {
