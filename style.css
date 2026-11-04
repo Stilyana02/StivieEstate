@@ -649,3 +649,70 @@ body.zoom-open {
   }
 
 }
+/* ====================================
+   STIVI — MOBILE HERO REFINEMENT
+   Само за мобилни устройства
+==================================== */
+
+@media (max-width: 600px) {
+
+  /* По-компактна начална секция */
+  .hero {
+    min-height: 740px;
+    height: auto;
+    align-items: center;
+  }
+
+  /* Запазваме мобилната снимка */
+  .hero-bg {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  /* Плавно затъмняване */
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.18) 0%,
+      rgba(0,0,0,0.30) 30%,
+      rgba(0,0,0,0.62) 65%,
+      rgba(0,0,0,0.88) 100%
+    );
+  }
+
+  /* По-добър баланс на съдържанието */
+  .hero-content {
+    padding-top: 145px;
+    padding-bottom: 110px;
+  }
+
+  /* Заглавие */
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.12;
+    letter-spacing: -0.8px;
+    margin-bottom: 18px;
+  }
+
+  /* Описание */
+  .hero p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  /* Бутон */
+  .hero .btn.primary {
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  /* Стрелка */
+  .scroll-down {
+    bottom: 22px;
+    width: 36px;
+    height: 36px;
+  }
+
+}
