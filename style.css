@@ -302,3 +302,66 @@ img, iframe, video { max-width: 100%; }
 @media (max-width: 800px) {
   .map { height: 320px; min-height: 320px; }
 }
+/* STIVI ESTATE — MOBILE REDESIGN */
+@media (max-width: 600px) {
+
+  .wine-section {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .wine-image {
+    background-position: 62% center;
+    transform: scale(1.02);
+  }
+
+  .wine-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(20, 3, 3, 0.94) 0%,
+      rgba(20, 3, 3, 0.78) 55%,
+      rgba(20, 3, 3, 0.45) 100%
+    );
+  }
+
+  .wine-inner {
+    display: block;
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .wine-copy {
+    max-width: 100%;
+  }
+
+  .wine-copy .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .wine-copy h2 {
+    font-size: clamp(32px, 8vw, 39px);
+    line-height: 1.12;
+    margin: 16px 0;
+  }
+
+  .wine-copy p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .wine-btn {
+    padding: 13px 20px;
+    font-size: 13px;
+    margin-top: 0;
+    border-radius: 6px;
+  }
+
+  /* Премахваме декоративния кръг само на телефон */
+  .wine-note {
+    display: none;
+  }
+}
