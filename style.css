@@ -462,3 +462,61 @@ body.zoom-open {
     height: 40px;
   }
 }
+
+/* СТРЕЛКИ ЗА УВЕЛИЧЕНАТА БРОШУРА */
+
+.zoom-page-prev,
+.zoom-page-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 56px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 8px;
+  background: rgba(20,20,20,.75);
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.zoom-page-prev { left: 8px; }
+.zoom-page-next { right: 8px; }
+
+.zoom-page-prev:hover,
+.zoom-page-next:hover {
+  background: #a40000;
+}
+
+/* 3D ПРЕЛИСТВАНЕ */
+
+.zoom-stage {
+  perspective: 1800px;
+}
+
+.zoom-turning-page {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform-origin: left center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (max-width: 600px) {
+  .zoom-page-prev,
+  .zoom-page-next {
+    width: 35px;
+    height: 48px;
+    font-size: 28px;
+  }
+
+  .zoom-page-prev { left: 3px; }
+  .zoom-page-next { right: 3px; }
+}
