@@ -254,3 +254,104 @@ if (menu && header && nav) {
 }
 
 show(0);
+
+/* ПРЕЛИСТВАНЕ КАТО КНИГА В УВЕЛИЧЕН РЕЖИМ */
+
+const zoomPrev = document.createElement("button");
+const zoomNext = document.createElement("button");
+
+zoomPrev.type = "button";
+zoomNext.type = "button";
+
+zoomPrev.className = "zoom-page-prev";
+zoomNext.className = "zoom-page-next";
+
+zoomPrev.textContent = "‹";
+zoomNext.textContent = "›";
+
+zoomPrev.setAttribute("aria-label", "Предишна страница");
+zoomNext.setAttribute("aria-label", "Следваща страница");
+
+zoomStage.appendChild(zoomPrev);
+zoomStage.appendChild(zoomNext);
+
+let zoomTurning = false;
+
+function turnZoomPage(direction) {
+  if (zoomTurning || !zoomOpen) return;
+
+  const target = current + direction;
+  if (target < 0 || target >= pages.length) return;
+
+  zoomTurning = true;
+
+  const oldPage = document.createElement("img");
+  oldPage.src = pages[current];
+  oldPage.className = "zoom-turning-page";
+
+  zoomStage.appendChild(oldPage);
+
+  // Следващата страница се показва под обръщащата се.
+  zoomImage.src = pages[target];
+  resetZoom();
+
+  const animation = oldPage.animate(
+    [
+      { transform: "rotateY(0deg)" },
+      {
+        transform: direction > 0
+          ? "rotateY(-90deg)"
+          : "rotateY(90deg)"
+      },
+      {
+        transform: direction > 0
+          ? "rotateY(-180deg)"
+          : "rotateY(180deg)"
+      }
+    ],
+    {
+      duration: 650,
+      easing: "ease-in-out",
+      fill: "forwards"
+    }
+  );
+
+  animation.onfinish = () => {
+    current = target;
+    show(current);
+    zoomCounter.textContent = `${current + 1} / ${pages.length}`;
+    oldPage.remove();
+    zoomTurning = false;
+  };
+}
+
+zoomPrev.addEventListener("click", () => turnZoomPage(-1));
+zoomNext.addEventListener("click", () => turnZoomPage(1));
+
+/* ПЛЪЗГАНЕ ЗА ПРЕЛИСТВАНЕ */
+
+let zoomSwipeX = null;
+let zoomSwipeY = null;
+
+zoomStage.addEventListener("touchstart", e => {
+  if (e.touches.length === 1 && scale === 1) {
+    zoomSwipeX = e.touches[0].clientX;
+    zoomSwipeY = e.touches[0].clientY;
+  } else {
+    zoomSwipeX = null;
+  }
+}, { passive: true });
+
+zoomStage.addEventListener("touchend", e => {
+  if (zoomSwipeX === null || scale > 1) return;
+
+  const dx = e.changedTouches[0].clientX - zoomSwipeX;
+  const dy = e.changedTouches[0].clientY - zoomSwipeY;
+
+  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) {
+    turnZoomPage(dx < 0 ? 1 : -1);
+  }
+
+  zoomSwipeX = null;
+}, { passive: true });
+
