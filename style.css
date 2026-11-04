@@ -520,3 +520,130 @@ body.zoom-open {
   .zoom-page-prev { left: 3px; }
   .zoom-page-next { right: 3px; }
 }
+/* =====================================
+   STIVI — PREMIUM MOBILE HERO
+   Само за телефони
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* Хедър */
+  .header {
+    height: 74px;
+    background: rgba(15, 15, 15, 0.68);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .nav {
+    height: 74px;
+  }
+
+  .logo img {
+    width: 105px;
+    max-height: 55px;
+  }
+
+  .menu-btn {
+    font-size: 27px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  /* Начална секция */
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Снимка */
+  .hero-bg {
+    inset: 0;
+    background-position: 58% center;
+    background-size: cover;
+    transform: none;
+    filter: none;
+  }
+
+  /* По-естествен градиент */
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,0.32) 0%,
+        rgba(0,0,0,0.15) 24%,
+        rgba(0,0,0,0.48) 48%,
+        rgba(0,0,0,0.83) 100%
+      );
+  }
+
+  /* Съдържание */
+  .hero-content {
+    padding-top: 95px;
+    padding-bottom: 95px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  /* Малък надпис */
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: #f1c75b;
+  }
+
+  /* Заглавие */
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+    margin: 0 0 20px;
+    font-weight: 800;
+  }
+
+  .hero h1 em {
+    color: #f1c75b;
+  }
+
+  /* Описание */
+  .hero p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 26px;
+  }
+
+  /* Основен бутон */
+  .hero .btn.primary {
+    padding: 15px 22px;
+    border-radius: 10px;
+    background: #bd0808;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  /* Стрелка надолу */
+  .scroll-down {
+    bottom: 24px;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    opacity: 0.8;
+  }
+
+  /* Скриваме плаващия бутон само на телефон */
+  .estate-float {
+    display: none;
+  }
+
+}
