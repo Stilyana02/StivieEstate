@@ -4,6 +4,8 @@ const pages = [
   "brochure/page-2.jpg",
   "brochure/page-3.jpg",
   "brochure/page-4.jpg"
+  "brochure/page-5.jpg"
+  "brochure/page-6.jpg"
 ];
 
 let current = 0;
